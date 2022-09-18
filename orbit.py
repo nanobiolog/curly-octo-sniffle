@@ -1,5 +1,3 @@
-#calculate orbital values of an object by using input from the user and show in the 3d graph
-
 import math
 import time
 import sys
@@ -7,7 +5,6 @@ import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 
 def orbital_values():
-    #get input from user
     print("Enter the orbital period in seconds: ")
     orbital_period = float(input())
     print("Enter the orbital radius in meters: ")
@@ -35,19 +32,19 @@ def orbital_values():
     print("Orbital Force: ", orbital_force)
     print("Orbital Energy: ", orbital_energy)
 
-    #calculate the orbital position in 3d graph
+    #calculate the orbital position
     #set the x, y and z axis
     x = []
     y = []
     z = []
 
-    #calculate the orbital position in 3d graph
+    #calculate the orbital position
     for i in range(0, 100):
         x.append(orbital_radius * math.cos(i))
         y.append(orbital_radius * math.sin(i))
         z.append(0)
 
-    #plot the 3d graph
+    #3d graph
     fig = plt.figure()
     ax = fig.add_subplot(111, projection='3d')
     ax.plot(x, y, z, label='orbital position')
@@ -56,7 +53,6 @@ def orbital_values():
     ax.set_zlabel('Z axis')
     plt.show()
 
-#call the function
 orbital_values()
 
 
